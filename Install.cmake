@@ -1,5 +1,5 @@
-function(install_tree FILES PREFIX)
-    foreach(F ${FILES})
+function(install_tree PREFIX)
+    foreach(F ${ARGN})
         string(REGEX MATCH "(.*)[/\\]" DIR ${F})
         install(FILES ${F} DESTINATION ${PREFIX}/${DIR})
     endforeach()
