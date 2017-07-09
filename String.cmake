@@ -7,7 +7,7 @@ endfunction()
 function(string_prepend OUT PREFIX)
     set(RESULT "")
     foreach(STR ${ARGN})
-        list(append RESULT "${PREFIX}${STR}")
+        list(APPEND RESULT "${PREFIX}${STR}")
     endforeach()
 
     set(${OUT} ${RESULT} PARENT_SCOPE)
