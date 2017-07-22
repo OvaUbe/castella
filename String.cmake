@@ -11,3 +11,11 @@ function(string_prepend OUT PREFIX)
 
     set(${OUT} ${RESULT} PARENT_SCOPE)
 endfunction()
+
+function(string_append OUT SUFFIX)
+    foreach(STR ${ARGN})
+        list(APPEND RESULT "${STR}${SUFFIX}")
+    endforeach()
+
+    set(${OUT} ${RESULT} PARENT_SCOPE)
+endfunction()
