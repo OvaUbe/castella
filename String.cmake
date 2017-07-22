@@ -5,7 +5,6 @@ function(string_join OUT SEPARATOR)
 endfunction()
 
 function(string_prepend OUT PREFIX)
-    set(RESULT "")
     foreach(STR ${ARGN})
         list(APPEND RESULT "${PREFIX}${STR}")
     endforeach()
