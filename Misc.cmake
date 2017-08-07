@@ -1,3 +1,7 @@
+include(${CMAKE_CURRENT_LIST_DIR}/Log.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/String.cmake)
+
+
 add_custom_target(_highlight_${PROJECT_NAME})
 
 function(highlight_matching GLOB)
@@ -15,6 +19,8 @@ endmacro()
 
 function(dump_definitions)
     string_append(DUMP "\n" ${_CMAKEUTILS_DEFINITION_LIST})
+    string_prepend(DUMP "    " ${DUMP})
     string(REGEX REPLACE "\n$" "" DUMP ${DUMP})
-    message(${DUMP})
+
+    log(info "Definitions:\n${DUMP}")
 endfunction()
